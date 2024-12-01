@@ -1,0 +1,20 @@
+extend type Query{
+    customers : [Customer]
+    customerById (id: ID): Customer
+    customerNameContans(name:String): [Customer]
+    customerByAgeRange(minAge:Int, maxAge: Int): [Customer]!
+    customerByAgeRangeFilter(filter:AgeRangeFilter): [Customer]!
+}
+
+input AgeRangeFilter{
+    minAge:Int!,
+    maxAge: Int!
+}
+
+type Customer{
+    id: ID ,
+    name: String,
+    age: Int,
+    city: String
+
+}
